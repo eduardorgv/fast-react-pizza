@@ -1,3 +1,5 @@
+import { formatCurrency } from "../../utils/helpers";
+
 export const MenuItem = ({ pizza }) => {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
