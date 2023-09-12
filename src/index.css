@@ -7,35 +7,56 @@
     @apply w-full rounded-full bg-stone-300 px-4 py-2 text-sm text-zinc-800 transition-all duration-300 placeholder:text-zinc-800 focus:outline-none md:px-6 md:py-3
   }
 
-  .button {
-    @apply text-base rounded-full bg-green-300 px-4 py-2 text-zinc-800 transition-colors duration-300 hover:bg-green-400 disabled:cursor-not-allowed 
+  .loader {
+    width: 48px;
+    height: 48px;
+    position: relative;
   }
-}
-
-/* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
-.loader {
-  width: 45px;
-  aspect-ratio: 0.75;
-  --c: no-repeat linear-gradient(#333 0 0);
-  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
-  background-size: 20% 50%;
-  animation: loading 1s infinite linear;
-}
-
-@keyframes loading {
-  20% {
-    background-position: 0% 0%, 50% 50%, 100% 50%;
+  .loader::before , .loader::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 48em;
+    height: 48em;
+    background-image:
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0),
+      radial-gradient(circle 10px, #86efac 100%, transparent 0);
+    background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
+                         13em -13em, -13em -13em, 13em 13em, -13em 13em;
+      background-repeat: no-repeat;
+    font-size: 0.5px;
+    border-radius: 50%;
+    animation: blast 1s ease-in infinite;
   }
-
-  40% {
-    background-position: 0% 100%, 50% 0%, 100% 50%;
+  .loader::after {
+    font-size: 1px;
+    background: #86efac;
+    animation: bounce 1s ease-in infinite;
   }
-
-  60% {
-    background-position: 0% 50%, 50% 100%, 100% 0%;
+  
+  @keyframes bounce {
+    0% , 100%{ font-size: 0.75px }
+    50% { font-size: 1.5px }
   }
-
-  80% {
-    background-position: 0% 50%, 50% 50%, 100% 100%;
+  @keyframes blast {
+    0% , 40% {
+      font-size: 0.5px;
+    }
+    70% {
+      opacity: 1;
+      font-size: 4px;
+    }
+     100% {
+       font-size: 6px;
+      opacity: 0;
+    }
   }
 }
