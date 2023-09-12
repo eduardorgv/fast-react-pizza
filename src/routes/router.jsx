@@ -6,6 +6,7 @@ import { Error } from "../ui/Error";
 import { Home } from "../ui/Home";
 import { Menu, loader as menuLoader } from "../features/menu/Menu";
 import { Order, loader as orderLoader } from "../features/order/Order";
+import { AboutUs } from "../ui/AboutUs";
 
 export const router = createBrowserRouter([
   {
