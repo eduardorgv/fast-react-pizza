@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Logo } from './Logo';
 import { SearchOrder } from '../features/order/SearchOrder';
-import { Username } from '../features/user/Username';
 import { useState } from 'react';
 
 export const Header = () => {
@@ -25,19 +25,6 @@ export const Header = () => {
         </div>
       </div>
     </nav>
-  );
-};
-
-const Logo = () => {
-  return (
-    <Link to="/" className="flex items-center uppercase">
-      <img src="/logo.png" alt="Pizza Rush Logo" className="w-11" />
-      <p className="text-stone-300">
-        Pizza
-        <br />
-        <span className="text-green-300">Rush.</span>
-      </p>
-    </Link>
   );
 };
 
