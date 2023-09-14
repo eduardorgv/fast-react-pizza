@@ -12,7 +12,7 @@ export const Menu = () => {
   console.log(menu);
 
   return (
-    <ul>
+    <ul className="grid mx-4 gap-12 grid-cols-autoFit h-fit md:mx-3">
       {menu.map((pizza) => (
         <MenuItem key={pizza.id} pizza={pizza} />
       ))}
