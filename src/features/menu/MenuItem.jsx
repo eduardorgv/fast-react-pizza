@@ -3,6 +3,7 @@ import { Button } from '../../ui/Button';
 import { DeleteItem } from '../cart/DeleteItem';
 import { formatCurrency } from '../../utils/helpers';
 import { useDispatch, useSelector } from 'react-redux';
+import { UpdateItemQuantity } from '../cart/UpdateItemQuantity';
 
 export const MenuItem = ({ pizza }) => {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -23,7 +24,7 @@ export const MenuItem = ({ pizza }) => {
 
   return (
     <li>
-      <div className="h-[330px] w-full rounded-lg border border-zinc-600 bg-zinc-700 shadow-lg shadow-zinc-600/70">
+      <div className="h-[370px] w-full rounded-lg border border-zinc-600 bg-zinc-700 shadow-lg shadow-zinc-600/70">
         <div className="flex items-center justify-center">
           <img
             className={`m-3 h-40 rounded-lg ${
@@ -38,16 +39,26 @@ export const MenuItem = ({ pizza }) => {
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {name}
           </h5>
-          <p className="mb-4 text-sm capitalize text-slate-200">
+          <p className="mb-3 text-sm capitalize text-slate-200">
             {ingredients.join(', ')}
           </p>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
               {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
             </span>
+          </div>
 
-            {isInCart && <DeleteItem pizzaId={id} />}
+          <div className="mt-4 flex items-center justify-between">
+            {isInCart && (
+              <>
+                <DeleteItem pizzaId={id} />
+                <UpdateItemQuantity
+                  pizzaId={id}
+                  currentQuantity={currentQuantity}
+                />
+              </>
+            )}
 
             {!soldOut && !isInCart && (
               <Button disabled={soldOut} type="small" onClick={handleAddToCart}>
