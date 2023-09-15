@@ -1,8 +1,12 @@
+import { useSelector } from 'react-redux';
 import { CreateUser } from '../features/user/CreateUser';
 import { AboutUs } from './AboutUs';
 import { Contact } from './Contact';
+import { Button } from './Button';
 
 export const Home = () => {
+  const username = useSelector((state) => state.user.username);
+
   return (
     <>
       <div className="flex flex-col items-center justify-center text-center sm:my-16">
@@ -12,7 +16,13 @@ export const Home = () => {
         <h2 className="mb-14 text-6xl font-semibold text-green-300 sm:text-7xl md:text-8xl">
           Straight out of the oven, straight to you.
         </h2>
-        <CreateUser />
+        {!username ? (
+          <CreateUser />
+        ) : (
+          <Button to="/menu" type="primary">
+            Continue ordering, {username}
+          </Button>
+        )}
       </div>
 
       {/* <AboutUs />

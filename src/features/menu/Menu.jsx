@@ -9,10 +9,9 @@ export const loader = async () => {
 
 export const Menu = () => {
   const menu = useLoaderData();
-  console.log(menu);
 
   return (
-    <ul className="grid mx-4 gap-12 grid-cols-autoFit h-fit md:mx-3">
+    <ul className="grid mx-4 my-6 gap-12 grid-cols-autoFit h-fit md:mx-3">
       {menu.map((pizza) => (
         <MenuItem key={pizza.id} pizza={pizza} />
       ))}

@@ -79,7 +79,7 @@ const HiddenMenu = ({ navbar }) => {
       <div className="mt-4 flex justify-center md:hidden">
         <SearchOrder />
       </div>
-      <ul className="items-center justify-center space-y-8 divide-y divide-stone-600 text-stone-300 md:flex md:space-x-6 md:space-y-0">
+      <ul className="items-center justify-center space-y-8 text-stone-300 md:flex md:space-x-6 md:space-y-0">
         <li>
           <Link className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5">
             Home
