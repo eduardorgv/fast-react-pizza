@@ -20,7 +20,7 @@ export const Cart = () => {
 
       <ul className="mt-3 divide-y divide-stone-600 border-b border-stone-600">
         {cart.map((item) => (
-          <CartItem key={item.id} item={item} />
+          <CartItem key={item.pizzaId} item={item} />
         ))}
       </ul>
 
