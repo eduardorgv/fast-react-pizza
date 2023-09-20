@@ -2,7 +2,7 @@ import { Button } from './Button';
 import { CreateUser } from '../features/user/CreateUser';
 import { useSelector } from 'react-redux';
 
-export const Home = () => {
+const Home = () => {
   const username = useSelector((state) => state.user.username);
 
   return (
@@ -23,3 +23,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

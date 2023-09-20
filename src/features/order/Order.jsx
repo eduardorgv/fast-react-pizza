@@ -9,7 +9,7 @@ import { OrderItem } from './OrderItem';
 import { useEffect } from 'react';
 import { UpdateOrder } from './UpdateOrder';
 
-export const Order = () => {
+const Order = () => {
   const fetcher = useFetcher();
   const order = useLoaderData();
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
@@ -93,3 +93,5 @@ export const loader = async ({ params }) => {
   const order = await getOrder(params.orderId);
   return order;
 };
+
+export default Order;

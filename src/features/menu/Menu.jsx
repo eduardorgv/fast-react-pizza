@@ -7,7 +7,7 @@ export const loader = async () => {
   return menu;
 };
 
-export const Menu = () => {
+const Menu = () => {
   const menu = useLoaderData();
 
   return (
@@ -18,3 +18,5 @@ export const Menu = () => {
     </ul>
   );
 };
+
+export default Menu;

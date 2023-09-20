@@ -5,7 +5,7 @@ import { EmptyCart } from './EmptyCart';
 import { LinkButton } from '../../ui/LinkButton';
 import { useDispatch, useSelector } from 'react-redux';
 
-export const Cart = () => {
+const Cart = () => {
   const username = useSelector((state) => state.user.username);
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
@@ -38,3 +38,5 @@ export const Cart = () => {
     </div>
   );
 };
+
+export default Cart;

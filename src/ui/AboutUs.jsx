@@ -1,4 +1,4 @@
-export const AboutUs = () => {
+const AboutUs = () => {
   return (
     <div className="flex flex-col items-center justify-center space-y-5 px-5 text-center md:px-3">
       <h1 className="w-full border-b border-stone-600 pb-4 text-5xl font-semibold sm:text-6xl md:text-7xl">
@@ -26,3 +26,5 @@ export const AboutUs = () => {
     </div>
   );
 };
+
+export default AboutUs;

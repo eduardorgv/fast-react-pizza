@@ -20,7 +20,7 @@ const isValidPhone = (str) =>
     str,
   );
 
-export const CreateOrder = () => {
+const CreateOrder = () => {
   const [withPriority, setWithPriority] = useState(false);
 
   const formErrors = useActionData();
@@ -196,3 +196,5 @@ export const action = async ({ request }) => {
   store.dispatch(clearCart());
   return redirect(`/order/${newOrder.id}`);
 };
+
+export default CreateOrder;

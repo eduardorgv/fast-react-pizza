@@ -1,4 +1,4 @@
-export const Contact = () => {
+const Contact = () => {
   return (
     <div className="text-center">
       <h1 className="w-full border-b border-stone-600 pb-4 text-5xl font-semibold sm:text-6xl md:text-7xl">
@@ -49,3 +49,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;
