@@ -26,7 +26,7 @@ export const Cart = () => {
 
       <div className="mt-7 flex items-center justify-between space-x-4">
         <Button type="secondary" onClick={() => dispatch(clearCart())}>
-          <div className="ite flex justify-center gap-1">
+          <div className="items-center flex justify-center gap-1">
             <span className="material-symbols-rounded">delete</span>
             <span>Clear cart</span>
           </div>
