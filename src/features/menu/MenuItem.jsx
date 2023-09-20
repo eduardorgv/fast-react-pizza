@@ -24,7 +24,7 @@ export const MenuItem = ({ pizza }) => {
 
   return (
     <li>
-      <div className="h-[370px] w-full rounded-lg border border-zinc-600 bg-zinc-700 shadow-lg shadow-zinc-600/70">
+      <div className="relative h-[370px] w-full rounded-lg border border-zinc-600 bg-zinc-700 shadow-lg shadow-zinc-600/70">
         <div className="flex items-center justify-center">
           <img
             className={`m-3 h-40 rounded-lg ${
@@ -43,13 +43,13 @@ export const MenuItem = ({ pizza }) => {
             {ingredients.join(', ')}
           </p>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-start">
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
               {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
             </span>
           </div>
-
-          <div className="mt-4 flex items-center justify-between">
+          
+          <div className="absolute bottom-5 left-3 right-3 m-auto mt-4 flex items-center justify-between">
             {isInCart && (
               <>
                 <DeleteItem pizzaId={id} />
@@ -59,10 +59,12 @@ export const MenuItem = ({ pizza }) => {
                 />
               </>
             )}
-
             {!soldOut && !isInCart && (
               <Button disabled={soldOut} type="small" onClick={handleAddToCart}>
-                Add to cart
+                <div className="flex items-center justify-center gap-1">
+                  <span className="material-symbols-rounded">shopping_cart</span>
+                  <span>Add to cart</span>
+                </div>
               </Button>
             )}
           </div>

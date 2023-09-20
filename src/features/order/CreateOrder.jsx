@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import store from '../../store/store';
 import { fetchAddress } from '../../store/slices/thunks';
+import { Spinner } from '../../ui/Spinner';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -101,13 +102,25 @@ export const CreateOrder = () => {
           </div>
 
           {!position.latitude && !position.longitude && (
-            <span className="absolute right-1 top-1">
+            <span className="absolute right-1 top-[34px] sm:top-0.5">
               <Button
                 type="small"
                 onClick={handleFetchAddress}
                 disabled={isLoadingAddress}
               >
-                Get position
+                <div className="flex items-center justify-center gap-1">
+                  {isLoadingAddress ? (
+                    <>
+                      <Spinner />
+                      <span>Getting position</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="material-symbols-rounded">radar</span>
+                      <span>Get position</span>
+                    </>
+                  )}
+                </div>
               </Button>
             </span>
           )}
@@ -140,9 +153,21 @@ export const CreateOrder = () => {
           ></input>
 
           <Button type="primary" disabled={isSubmitting || isLoadingAddress}>
-            {isSubmitting
-              ? 'Placing order...'
-              : `Order now from ${formatCurrency(totalPrice)}`}
+            <div className="flex items-center justify-center gap-1">
+              {isSubmitting ? (
+                <>
+                  <Spinner />
+                  <span>Placing order...</span>
+                </>
+              ) : (
+                <>
+                  <span className="material-symbols-rounded">
+                    shopping_cart
+                  </span>
+                  <span>Order now from {formatCurrency(totalPrice)}</span>
+                </>
+              )}
+            </div>
           </Button>
         </div>
       </Form>

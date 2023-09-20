@@ -2,6 +2,7 @@ import { AboutUs } from "../ui/AboutUs";
 import { action as updateOrderAction } from "../features/order/UpdateOrder";
 import { AppLayout } from "../ui/AppLayout";
 import { Cart } from "../features/cart/Cart";
+import { Contact } from "../ui/Contact";
 import { createBrowserRouter } from "react-router-dom";
 import { CreateOrder, action as createOrderAction } from "../features/order/CreateOrder";
 import { Error } from "../ui/Error";
@@ -17,6 +18,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       },
       {
         path: "/menu",

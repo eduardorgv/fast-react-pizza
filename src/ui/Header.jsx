@@ -81,17 +81,26 @@ const HiddenMenu = ({ navbar }) => {
       </div>
       <ul className="items-center justify-center space-y-8 text-stone-300 md:flex md:space-x-6 md:space-y-0">
         <li>
-          <Link className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5">
+          <Link
+            to="/"
+            className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5"
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5">
+          <Link
+            to="/about-us"
+            className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5"
+          >
             About us
           </Link>
         </li>
         <li>
-          <Link className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5">
+          <Link
+            to="contact"
+            className="mr-2 block py-2 hover:text-stone-400 lg:px-5 lg:py-2.5"
+          >
             Contact
           </Link>
         </li>
